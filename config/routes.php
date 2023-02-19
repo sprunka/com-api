@@ -168,7 +168,7 @@ return function (App $app) {
      *     )
      * )
      */
-    $app->get('/name/{type}/{gender}', Name::class);
+    $app->get('/name/{type}/{gender}', \CommonRoutes\Generate\Name::class);
 
     /**
      * @OA\Get(
@@ -203,7 +203,7 @@ return function (App $app) {
      *     )
      * )
      */
-    $app->get('/gender', Gender::class);
+    $app->get('/gender', \CommonRoutes\Generate\Gender::class);
 
     /**
      * @OA\Get(
@@ -237,7 +237,7 @@ return function (App $app) {
      *     )
      * )
      */
-    $app->get('/voice[/{laban}]', Voice::class);
+    $app->get('/voice[/{laban}]', \CommonRoutes\Generate\Voice::class);
 
     /**
      * @OA\Get(
@@ -274,7 +274,7 @@ It's important to use language thoughtfully and respectfully, and to avoid stigm
      *     )
      * )
      */
-    $app->get('/physical_description[/{gender}]', PhysicalDescription::class);
+    $app->get('/physical_description[/{gender}]', \CommonRoutes\Generate\PhysicalDescription::class);
 
     /**
      * @OA\Get(
@@ -295,7 +295,7 @@ It's important to use language thoughtfully and respectfully, and to avoid stigm
      *     )
      * )
      */
-    $app->get('/occupation', Occupation::class);
+    $app->get('/occupation', \CommonRoutes\Generate\Occupation::class);
 
     /**
      * @OA\Get(
