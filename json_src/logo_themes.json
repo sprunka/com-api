@@ -1,0 +1,71 @@
+{
+    "Defining Event": [
+        "A thundering realization",
+        "Loss of a loved one, valued possession, or social standing",
+        "An accident",
+        "Rise to greatness",
+        "15 minutes of fame",
+        "Enlightenment"
+    ],
+    "Defining Relationship": [
+        "A love interest",
+        "Someone dependent on you",
+        "A family member or friend",
+        "A teacher or mentor",
+        "A team, gang, or other affiliation",
+        "A partner or a sidekick",
+        "A nemesis"
+    ],
+    "Mission": [
+        "Philanthropy or good-doing",
+        "Revenge",
+        "A sworn oath or an unbreakable promise",
+        "A job that must get done",
+        "An act of conscience",
+        "A social or political cause",
+        "A personal goal",
+        "An ongoing search",
+        "An obsession"
+    ],
+    "Personality": [
+        "Character traits and quirks",
+        "Temperament",
+        "Personal style",
+        "Habits",
+        "Social skills",
+        "Lifestyle",
+        "Attitude",
+        "An ongoing act",
+        "Mental stability or lack thereof"
+    ],
+    "Possessions": [
+        "Guns, lots of guns",
+        "An outfitted vehicle",
+        "A tool set",
+        "Cash, savings, or assets",
+        "A hoard",
+        "Useful personal effects",
+        "Standard issue or custom gear",
+        "Trinkets"
+    ],
+    "Routine": [
+        "A job or occupation",
+        "A political position",
+        "A role in an organization",
+        "Responsibility over someone’s care",
+        "A time-consuming hobby",
+        "Daily survival",
+        "Bumming around",
+        "School",
+        "Criminal activity"
+    ],
+    "Training": [
+        "Education",
+        "Combat or martial arts training",
+        "Jack of all trades",
+        "An internship or apprenticeship",
+        "Life experience",
+        "Field record",
+        "Research"
+    ]
+}

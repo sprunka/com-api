@@ -1,0 +1,39 @@
+<?php
+
+namespace CoMAPI\Generate\Rift;
+
+use CoMAPI\Generic\ListFactory;
+use CoMAPI\Generic\RecordFactory;
+use Faker\Factory;
+use Faker\Generator;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+class LogosMotivation extends \CoMAPI\AbstractRoute
+{
+    protected Generator $faker;
+
+    private array $logosMotivation;
+
+    public function __construct(Factory $faker)
+    {
+        $this->faker = $faker::create();
+        $this->logosMotivation = json_decode(file_get_contents(__DIR__ . '/../../../json_src/logos_motivation.json'), true);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, array $args = []): ResponseInterface
+    {
+        return parent::outputResponse($response, $this->generate());
+    }
+    public function generate($type = '', $gender = '', $laban = false): array
+    {
+        $allLogos = $this->logosMotivation;
+        $firstRoll = $this->faker->randomElement($allLogos);
+        $secondRoll = $this->faker->randomElement($firstRoll);
+
+        return ['logos_motivation' => $secondRoll];
+   }
+}
