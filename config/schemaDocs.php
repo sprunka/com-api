@@ -41,6 +41,7 @@
  *     )
  * )
  */
+
 /**
  * @OA\Schema(
  *     schema="PhysicalDescription",
@@ -101,7 +102,6 @@
  */
 
 /**
- *
  * @OA\Schema(
  *     schema="LimitedCaseDetails",
  *     type="object",

@@ -20,12 +20,12 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
 
-use CoMAPI\Generate\Gender;
-use CoMAPI\Generate\Name;
+use CommonRoutes\Generate\Gender;
+use CommonRoutes\Generate\Name;
 use CoMAPI\Generate\NPC;
-use CoMAPI\Generate\Occupation;
-use CoMAPI\Generate\PhysicalDescription;
-use CoMAPI\Generate\Voice;
+use CommonRoutes\Generate\Occupation;
+use CommonRoutes\Generate\PhysicalDescription;
+use CommonRoutes\Generate\Voice;
 
 return function (App $app) {
     $app->get('/', function (
@@ -168,7 +168,7 @@ return function (App $app) {
      *     )
      * )
      */
-    $app->get('/name/{type}/{gender}', CommonRoutes\Generate\Name::class);
+    $app->get('/name/{type}/{gender}', Name::class);
 
     /**
      * @OA\Get(
