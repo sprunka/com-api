@@ -20,12 +20,12 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
 
-use CoMAPI\Generate\Gender;
-use CoMAPI\Generate\Name;
+use CommonRoutes\Generate\Gender;
+use CommonRoutes\Generate\Name;
 use CoMAPI\Generate\NPC;
-use CoMAPI\Generate\Occupation;
-use CoMAPI\Generate\PhysicalDescription;
-use CoMAPI\Generate\Voice;
+use CommonRoutes\Generate\Occupation;
+use CommonRoutes\Generate\PhysicalDescription;
+use CommonRoutes\Generate\Voice;
 
 return function (App $app) {
     $app->get('/', function (
@@ -203,7 +203,7 @@ return function (App $app) {
      *     )
      * )
      */
-    $app->get('/gender', Gender::class);
+    $app->get('/gender', CommonRoutes\Generate\Gender::class);
 
     /**
      * @OA\Get(
@@ -237,7 +237,7 @@ return function (App $app) {
      *     )
      * )
      */
-    $app->get('/voice[/{laban}]', Voice::class);
+    $app->get('/voice[/{laban}]', CommonRoutes\Generate\Voice::class);
 
     /**
      * @OA\Get(
@@ -274,7 +274,7 @@ It's important to use language thoughtfully and respectfully, and to avoid stigm
      *     )
      * )
      */
-    $app->get('/physical_description[/{gender}]', PhysicalDescription::class);
+    $app->get('/physical_description[/{gender}]', CommonRoutes\Generate\PhysicalDescription::class);
 
     /**
      * @OA\Get(
@@ -295,7 +295,7 @@ It's important to use language thoughtfully and respectfully, and to avoid stigm
      *     )
      * )
      */
-    $app->get('/occupation', Occupation::class);
+    $app->get('/occupation', CommonRoutes\Generate\Occupation::class);
 
     /**
      * @OA\Get(

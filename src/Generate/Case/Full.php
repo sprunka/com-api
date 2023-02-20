@@ -4,8 +4,8 @@ namespace CoMAPI\Generate\Case;
 
 use CoMAPI\Generate\NPC;
 use CoMAPI\Generate\Rift\Base;
-use CoMAPI\Generic\ListFactory;
-use CoMAPI\Generic\RecordFactory;
+use CommonRoutes\Generic\ListFactory;
+use CommonRoutes\Generic\RecordFactory;
 use Faker\Factory;
 use Faker\Generator;
 use Psr\Http\Message\ResponseInterface as Response;

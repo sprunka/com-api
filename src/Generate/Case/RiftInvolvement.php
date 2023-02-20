@@ -6,7 +6,7 @@ use Faker\Factory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class RiftInvolvment extends \CoMAPI\AbstractRoute
+class RiftInvolvement extends \CoMAPI\AbstractRoute
 {
 
 

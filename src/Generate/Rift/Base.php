@@ -14,8 +14,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 use CoMAPI\AbstractRoute;
-use CoMAPI\Generic\ListFactory;
-use CoMAPI\Generic\RecordFactory;
+use CommonRoutes\Generic\ListFactory;
+use CommonRoutes\Generic\RecordFactory;
 
 
 class Base extends AbstractRoute
