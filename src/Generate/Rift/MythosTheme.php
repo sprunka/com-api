@@ -7,10 +7,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface;
 use Faker\Generator;
 use CoMAPI\AbstractRoute;
-use CoMAPI\Generic\ListFactory;
-use CoMAPI\Generic\RecordFactory;
-use CoMAPI\Generic\RecordList;
-use CoMAPI\Generic\Record;
+use CommonRoutes\Generic\ListFactory;
+use CommonRoutes\Generic\RecordFactory;
+use CommonRoutes\Generic\RecordList;
+use CommonRoutes\Generic\Record;
 
 class MythosTheme extends AbstractRoute
 {

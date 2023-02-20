@@ -9,12 +9,12 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 use CoMAPI\AbstractRoute;
-use CoMAPI\Generate\Gender;
-use CoMAPI\Generate\Name;
-use CoMAPI\Generate\PhysicalDescription;
-use CoMAPI\Generate\Voice;
-use CoMAPI\Generic\ListFactory;
-use CoMAPI\Generic\RecordFactory;
+use CommonRoutes\Generate\Gender;
+use CommonRoutes\Generate\Name;
+use CommonRoutes\Generate\PhysicalDescription;
+use CommonRoutes\Generate\Voice;
+use CommonRoutes\Generic\ListFactory;
+use CommonRoutes\Generic\RecordFactory;
 
 
 class NPC extends AbstractRoute
