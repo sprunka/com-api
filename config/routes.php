@@ -278,6 +278,25 @@ It's important to use language thoughtfully and respectfully, and to avoid stigm
 
     /**
      * @OA\Get(
+     *     path="/mannerisms",
+     *     summary="Generates a set of mannerisms",
+     *     tags={"Generators"},
+     *     @OA\Response(
+     *         response="200",
+     *         description=">
+    Physical description. The build descriptor should be roughly accurate for the calculated BMI.
+     * NB: Some of these descriptors may have different connotations and are not necessarily accurate or appropriate in all contexts.
+    It's important to use language thoughtfully and respectfully, and to avoid stigmatizing or derogatory terms.",
+     *         @OA\JsonContent(
+     *             type="object"
+     *         )
+     *     )
+     * )
+     */
+    $app->get('/mannerisms', CommonRoutes\Generate\PhysicalMannerism::class);
+
+    /**
+     * @OA\Get(
      *     path="/occupation",
      *     summary="Generate a random occupation",
      *     tags={"Generators"},

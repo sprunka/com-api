@@ -3,6 +3,11 @@
 namespace CoMAPI\Generate;
 
 use CoMAPI\Generate\Rift\Base;
+use CommonRoutes\Generate\Background\Fears;
+use CommonRoutes\Generate\Background\Hobbies;
+use CommonRoutes\Generate\Background\Traits;
+use CommonRoutes\Generate\Background\Values;
+use CommonRoutes\Generate\PhysicalMannerism;
 use Faker\Factory;
 use Faker\Generator;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -58,14 +63,41 @@ class NPC extends AbstractRoute
         $name = (new Name($this->fakerFactory, $this->listFactory, $this->recordFactory))->generate(type: 'full', gender: $tempGender);
 
         $physical = (new PhysicalDescription($this->fakerFactory))->generate(gender: $tempGender);
+        $mannerisms = (new PhysicalMannerism())->generate();
 
         //$occupation = (new Occupation($this->fakerFactory))->generate();
         $occupation = (new Base(fakerFactory: $this->fakerFactory, listFactory: $this->listFactory,
             recordFactory: $this->recordFactory))->generate();
 
+        $background = $this->buildBackgroundDetails();
+
         $laban = ( rand(1,2) % 2 === 0 );
         $voice = (new Voice($this->fakerFactory))->generate(laban: $laban);
 
-        return array_merge($name, $genderArr, $occupation, $physical, ['vocal_tips' => $voice]);
+        $tableTitle = ['tableTitle' => 'NPC: ' . $name['name']];
+
+        return array_merge(
+            $name,
+            $genderArr,
+            $occupation,
+            ['physical_description' => $physical],
+            ['background_details' => $background],
+            ['mannerisms' => $mannerisms],
+            ['vocal_tips' => $voice],
+            $tableTitle
+        );
     }
+
+    private function buildBackgroundDetails()
+    {
+
+        $fears = (new Fears())->generate();
+        $hobbies = (new Hobbies())->generate();
+        $traits = (new Traits())->generate();
+        $values = (new Values())->generate();
+
+        return array_merge($traits, $values, $hobbies, $fears);
+    }
+
+
 }

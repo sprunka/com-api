@@ -8,8 +8,10 @@ use Psr\Http\Message\ServerRequestInterface;
 /**
  * Class AbstractRoute
  * @package CoMAPI
+ * Help is currently unused and undocumented. It is left here as a placeholder for a possible future upgrade.
+ *
  */
-abstract class AbstractRoute
+abstract class AbstractRoute extends \CommonRoutes\AbstractRoute
 {
     /**
      * @var array
@@ -24,30 +26,5 @@ abstract class AbstractRoute
         return (object) $this->help;
     }
 
-    /**
-     * @param ServerRequestInterface $request
-     * @param ResponseInterface $response
-     * @param array $args
-     * @return ResponseInterface
-     */
-    abstract public function __invoke(
-        ServerRequestInterface $request,
-        ResponseInterface $response,
-        array $args = []
-    ): ResponseInterface;
 
-    abstract public function generate($type = '', $gender = '', $laban = false): array;
-
-    /**
-     * @param ResponseInterface $response
-     * @param array $outArray
-     * @return ResponseInterface
-     */
-    protected function outputResponse(ResponseInterface $response, array $outArray) : ResponseInterface
-    {
-        $response->getBody()->write(json_encode($outArray, JSON_PRETTY_PRINT));
-        return $response
-            ->withHeader('Content-Type', 'application/json')
-            ->withStatus(200);
-    }
 }
