@@ -37,18 +37,6 @@ class NPC extends AbstractRoute
         $this->recordFactory = $recordFactory;
     }
 
-
-    /**
-     * @param Request $request
-     * @param Response $response
-     * @param $args
-     * @return Response
-     */
-    public function __invoke(Request $request, Response $response, array $args = []) : Response
-    {
-        return parent::outputResponse($response, $this->generate());
-    }
-
     public function generate($type = '', $gender = '', $laban = false): array
     {
         $genderArr = (new Gender($this->fakerFactory))->generate();

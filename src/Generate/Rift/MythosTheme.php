@@ -21,12 +21,6 @@ class MythosTheme extends AbstractRoute
     {
         $this->mythosGroups = json_decode(file_get_contents(__DIR__ . '/../../../json_src/mythos_themes.json'), true);
     }
-    public function __invoke(ServerRequestInterface $request, Response $response, array $args = []): Response
-    {
-        $outArray = $this->generate();
-
-        return parent::outputResponse($response, $outArray);
-    }
 
     public function generate($type = 'first', $gender = 'any', $laban = false):array
     {
