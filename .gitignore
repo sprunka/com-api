@@ -2,3 +2,7 @@
 /vendor/*
 /.phpunit.result.cache
 /composer.lock
+
+*.sh
+
+public/router.php
