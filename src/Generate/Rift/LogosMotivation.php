@@ -21,13 +21,6 @@ class LogosMotivation extends \CoMAPI\AbstractRoute
         $this->logosMotivation = json_decode(file_get_contents(__DIR__ . '/../../../json_src/logos_motivation.json'), true);
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, array $args = []): ResponseInterface
-    {
-        return parent::outputResponse($response, $this->generate());
-    }
     public function generate($type = '', $gender = '', $laban = false): array
     {
         $allLogos = $this->logosMotivation;

@@ -26,18 +26,6 @@ class Full extends \CoMAPI\AbstractRoute
         $this->recordFactory = $recordFactory;
     }
 
-
-    /**
-     * @param Request $request
-     * @param Response $response
-     * @param array $args
-     * @return Response
-     */
-    public function __invoke(Request $request, Response $response, array $args = []) : Response
-    {
-        return parent::outputResponse($response, $this->generate());
-    }
-
     public function generate($type = '', $gender = '', $laban = false): array
     {
         $case = (new Only(fakerFactory: $this->fakerFactory, listFactory: $this->listFactory, recordFactory: $this->recordFactory))->generate()['case_details'];

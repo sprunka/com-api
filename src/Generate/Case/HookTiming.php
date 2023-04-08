@@ -17,13 +17,6 @@ class HookTiming extends \CoMAPI\AbstractRoute
         $this->faker = $faker::create();
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, array $args = []): ResponseInterface
-    {
-        return parent::outputResponse($response, $this->generate());
-    }
     public function generate($type = '', $gender = '', $laban = false): array
     {
         $timingList = [
