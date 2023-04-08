@@ -74,7 +74,7 @@ class NPC extends AbstractRoute
         $laban = ( rand(1,2) % 2 === 0 );
         $voice = (new Voice($this->fakerFactory))->generate(laban: $laban);
 
-        $tableTitle = ['tableTitle' => 'NPC: ' . $name['name'] . '(' . $tempGender . ')'];
+        $tableTitle = ['tableTitle' => 'NPC: ' . $name['name']];
 
         return array_merge(
             $name,
