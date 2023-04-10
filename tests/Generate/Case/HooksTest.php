@@ -1,23 +1,26 @@
 <?php
 
-namespace CoMAPI\Generate\Case;
+namespace CoMAPI\Test\Generate\Case;
 
-use CommonRoutes\AbstractRoute;
+use CoMAPI\Generate\Case\Hooks;
 use Faker\Factory;
-use Faker\Generator;
+use PHPUnit\Framework\TestCase;
 
-class Hooks extends AbstractRoute
+class HooksTest extends TestCase
 {
+    protected $hooks;
 
-    protected Generator $faker;
-
-    public function __construct(Factory $faker)
+    protected function setUp(): void
     {
-        $this->faker = $faker::create();
+        $this->hooks = new Hooks(new Factory());
     }
 
-    public function generate($type = '', $gender = '', $laban = false): array
+    public function testGenerate()
     {
+        $result = $this->hooks->generate();
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey('hook', $result);
+
         $hookList = [
             "The victim(s) of the affected party approach the crew, they are in need",
             "Someone related to the victim approaches the crew, they ask for help or an investigation",
@@ -27,9 +30,11 @@ class Hooks extends AbstractRoute
             "The crew members are witnesses, or the evidence crops up during the crew members' investigation of their Mysteries or of a crew Mystery"
         ];
 
-        $hook = $this->faker->randomElement($hookList);
+        $this->assertContains($result['hook'], $hookList);
+    }
 
-        return ['hook' => $hook];
-
+    public function test__construct()
+    {
+        $this->assertInstanceOf(Hooks::class, $this->hooks);
     }
 }

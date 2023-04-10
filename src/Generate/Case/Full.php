@@ -3,15 +3,13 @@
 namespace CoMAPI\Generate\Case;
 
 use CoMAPI\Generate\NPC;
-use CoMAPI\Generate\Rift\Base;
+use CommonRoutes\AbstractRoute;
 use CommonRoutes\Generic\ListFactory;
 use CommonRoutes\Generic\RecordFactory;
 use Faker\Factory;
 use Faker\Generator;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 
-class Full extends \CoMAPI\AbstractRoute
+class Full extends AbstractRoute
 {
     protected Generator $faker;
     protected Factory $fakerFactory;

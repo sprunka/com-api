@@ -2,12 +2,11 @@
 
 namespace CoMAPI\Generate\Rift;
 
+use CommonRoutes\AbstractRoute;
 use Faker\Factory;
 use Faker\Generator;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
 
-class AwakeningReason extends \CoMAPI\AbstractRoute
+class AwakeningReason extends AbstractRoute
 {
     protected Generator $faker;
 

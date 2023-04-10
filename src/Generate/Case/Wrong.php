@@ -2,12 +2,11 @@
 
 namespace CoMAPI\Generate\Case;
 
+use CommonRoutes\AbstractRoute;
 use Faker\Factory;
 use Faker\Generator;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
 
-class Wrong extends \CoMAPI\AbstractRoute
+class Wrong extends AbstractRoute
 {
 
     protected Generator $faker;
@@ -17,13 +16,6 @@ class Wrong extends \CoMAPI\AbstractRoute
         $this->faker = $faker::create();
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, array $args = []): ResponseInterface
-    {
-        return parent::outputResponse($response, $this->generate());
-    }
     public function generate($type = '', $gender = '', $laban = false): array
     {
         $wrongsList = [

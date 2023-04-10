@@ -1,10 +1,6 @@
 /.idea/*
 /vendor/*
 /.phpunit.result.cache
-/composer.lock
-
 *.sh
-
 public/router.php
-
 tests/.phpunit.cache/

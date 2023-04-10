@@ -2,12 +2,11 @@
 
 namespace CoMAPI\Generate\Case;
 
+use CommonRoutes\AbstractRoute;
 use Faker\Factory;
 use Faker\Generator;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
 
-class Problem extends \CoMAPI\AbstractRoute
+class Problem extends AbstractRoute
 {
 
     protected Generator $faker;
