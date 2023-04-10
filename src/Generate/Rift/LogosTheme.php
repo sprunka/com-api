@@ -2,15 +2,7 @@
 
 namespace CoMAPI\Generate\Rift;
 
-use Faker\Factory;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface;
-use Faker\Generator;
-use CoMAPI\AbstractRoute;
-use CommonRoutes\Generic\ListFactory;
-use CommonRoutes\Generic\RecordFactory;
-use CommonRoutes\Generic\RecordList;
-use CommonRoutes\Generic\Record;
+use  CommonRoutes\AbstractRoute;
 
 class LogosTheme extends AbstractRoute
 {
@@ -26,20 +18,12 @@ class LogosTheme extends AbstractRoute
         $allLogos = $this->logosGroups;
         $firstRollKey = array_rand($allLogos);
         $secondRollKey = array_rand($allLogos[$firstRollKey]);
-        //$innerRollKey = array_rand($allLogos[$firstRollKey][$secondRollKey]);
         $innerRoll = $allLogos[$firstRollKey][$secondRollKey];
 
         return [
             'logos_type' => $firstRollKey,
             'possible_theme' => $innerRoll
         ];
-
-//        $allLogos = $this->logosGroups;
-//        $firstRoll = $this->faker->randomElement($allLogos);
-//        $secondRoll = $this->faker->randomElement($firstRoll);
-//        return [
-//            'logos_theme' => $secondRoll
-//        ];
     }
 
 }

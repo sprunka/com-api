@@ -2,18 +2,11 @@
 
 namespace CoMAPI\Generate\Rift;
 
-use CoMAPI\Generate\Rift\AwakeningReason;
-use CoMAPI\Generate\Rift\Level;
-use CoMAPI\Generate\Rift\Logos;
-use CoMAPI\Generate\Rift\LogosMotivation;
-use CoMAPI\Generate\Rift\Mythos;
-use CoMAPI\Generate\Rift\MythosMotivation;
 use Faker\Factory;
 use Faker\Generator;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 
-use CoMAPI\AbstractRoute;
+
+use  CommonRoutes\AbstractRoute;
 use CommonRoutes\Generic\ListFactory;
 use CommonRoutes\Generic\RecordFactory;
 

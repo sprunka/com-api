@@ -10,10 +10,7 @@ use CommonRoutes\Generate\Background\Values;
 use CommonRoutes\Generate\PhysicalMannerism;
 use Faker\Factory;
 use Faker\Generator;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-
-use CoMAPI\AbstractRoute;
+use CommonRoutes\AbstractRoute;
 use CommonRoutes\Generate\Gender;
 use CommonRoutes\Generate\Name;
 use CommonRoutes\Generate\PhysicalDescription;

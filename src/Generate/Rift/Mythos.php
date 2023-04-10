@@ -2,15 +2,7 @@
 
 namespace CoMAPI\Generate\Rift;
 
-use Faker\Factory;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface;
-use Faker\Generator;
-use CoMAPI\AbstractRoute;
-use CommonRoutes\Generic\ListFactory;
-use CommonRoutes\Generic\RecordFactory;
-use CommonRoutes\Generic\RecordList;
-use CommonRoutes\Generic\Record;
+use  CommonRoutes\AbstractRoute;
 
 class Mythos extends AbstractRoute
 {

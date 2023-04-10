@@ -2,11 +2,10 @@
 
 namespace CoMAPI\Generate\Case;
 
+use CommonRoutes\AbstractRoute;
 use Faker\Factory;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
 
-class RiftInvolvement extends \CoMAPI\AbstractRoute
+class RiftInvolvement extends AbstractRoute
 {
 
 
